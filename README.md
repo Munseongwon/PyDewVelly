@@ -1,6 +1,6 @@
 # PyDewVelly
 ### Mini Stardew Velly Game using Pygame
-<img src="GameStart.png" alt="Intro Screen" width="400px" height="400px"><img src="Playing.png" alt="Playing Screen" width="400px" height="400px">
+<img src="start.png" alt="Intro Screen" width="200px" height="400px"><img src="plant.png" alt="Planting Screen" width="200px" height="400px"><img src="crop_harvest.png" alt="Haverst Screen" width="200px" height="400px"><img src="tree_harvest.png" alt="Haverst Screen" width="200px" height="400px"><img src="merchant.png" alt="Buy And Sell" width="200px" height="400px">
 
 ## 프로젝트 요약
 ![Langauge:Python](https://img.shields.io/badge/Language-Python-purple) ![platform:PyGame](https://img.shields.io/badge/Platform-PyGame-pink)
@@ -30,4 +30,4 @@
 <br>
 
 ## 시연영상
-https://youtu.be/8cUrI4e3xQs
+https://youtu.be/Kx9QKkBcOdw
