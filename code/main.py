@@ -1,6 +1,7 @@
-import pygame, sys
-from settings import *
+import pygame
+import sys
 from level import Level
+from settings import *
 
 
 class Game:

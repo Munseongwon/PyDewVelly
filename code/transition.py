@@ -1,6 +1,7 @@
 import pygame
 from settings import *
 
+
 class Transition:
 	def __init__(self, reset, player):
 		
@@ -26,4 +27,4 @@ class Transition:
 			self.speed = -2
 
 		self.image.fill((self.color, self.color, self.color))
-		self.display_surface.blit(self.image, (0, 0), special_flags = pygame.BLEND_RGBA_MULT)
+		self.display_surface.blit(self.image, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)

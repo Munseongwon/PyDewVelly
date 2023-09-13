@@ -11,6 +11,7 @@ from sky import Rain, Sky
 from random import randint
 from menu import Menu
 
+
 class Level:
 	def __init__(self):
 
@@ -68,11 +69,11 @@ class Level:
 		# trees 
 		for obj in tmx_data.get_layer_by_name('Trees'):
 			Tree(
-				pos = (obj.x, obj.y), 
-				surf = obj.image, 
-				groups = [self.all_sprites, self.collision_sprites, self.tree_sprites], 
-				name = obj.name,
-				player_add = self.player_add)
+				pos=(obj.x, obj.y),
+				surf=obj.image,
+				groups=[self.all_sprites, self.collision_sprites, self.tree_sprites],
+				name=obj.name,
+				player_add=self.player_add)
 
 		# wildflowers 
 		for obj in tmx_data.get_layer_by_name('Decoration'):
@@ -86,13 +87,13 @@ class Level:
 		for obj in tmx_data.get_layer_by_name('Player'):
 			if obj.name == 'Start':
 				self.player = Player(
-					pos = (obj.x,obj.y), 
-					group = self.all_sprites, 
-					collision_sprites = self.collision_sprites,
-					tree_sprites = self.tree_sprites,
-					interaction = self.interaction_sprites,
-					soil_layer = self.soil_layer,
-					toggle_shop = self.toggle_shop)
+					pos=(obj.x, obj.y),
+					group=self.all_sprites,
+					collision_sprites=self.collision_sprites,
+					tree_sprites=self.tree_sprites,
+					interaction=self.interaction_sprites,
+					soil_layer=self.soil_layer,
+					toggle_shop=self.toggle_shop)
 			
 			if obj.name == 'Bed':
 				Interaction((obj.x,obj.y), (obj.width,obj.height), self.interaction_sprites, obj.name)
@@ -102,10 +103,10 @@ class Level:
 
 
 		Generic(
-			pos = (0,0),
-			surf = pygame.image.load('../graphics/world/ground.png').convert_alpha(),
-			groups = self.all_sprites,
-			z = LAYERS['ground'])
+			pos=(0, 0),
+			surf=pygame.image.load('../graphics/world/ground.png').convert_alpha(),
+			groups=self.all_sprites,
+			z=LAYERS['ground'])
 
 	def player_add(self,item):
 
@@ -142,10 +143,10 @@ class Level:
 				if plant.harvestable and plant.rect.colliderect(self.player.hitbox):
 					self.player_add(plant.plant_type)
 					plant.kill()
-					Particle(plant.rect.topleft, plant.image, self.all_sprites, z = LAYERS['main'])
+					Particle(plant.rect.topleft, plant.image, self.all_sprites, z=LAYERS['main'])
 					self.soil_layer.grid[plant.rect.centery // TILE_SIZE][plant.rect.centerx // TILE_SIZE].remove('P')
 
-	def run(self,dt):
+	def run(self, dt):
 		
 		# drawing logic
 		self.display_surface.fill('black')
@@ -168,6 +169,7 @@ class Level:
 		if self.player.sleep:
 			self.transition.play()
 
+
 class CameraGroup(pygame.sprite.Group):
 	def __init__(self):
 		super().__init__()
@@ -179,7 +181,7 @@ class CameraGroup(pygame.sprite.Group):
 		self.offset.y = player.rect.centery - SCREEN_HEIGHT / 2
 
 		for layer in LAYERS.values():
-			for sprite in sorted(self.sprites(), key = lambda sprite: sprite.rect.centery):
+			for sprite in sorted(self.sprites(), key=lambda sprite: sprite.rect.centery):
 				if sprite.z == layer:
 					offset_rect = sprite.rect.copy()
 					offset_rect.center -= self.offset

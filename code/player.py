@@ -82,13 +82,14 @@ class Player(pygame.sprite.Sprite):
             self.watering.play()
 
     def get_target_pos(self):
-
         self.target_pos = self.rect.center + PLAYER_TOOL_OFFSET[self.status.split('_')[0]]
+
 
     def use_seed(self):
         if self.seed_inventory[self.selected_seed] > 0:
             self.soil_layer.plant_seed(self.target_pos, self.selected_seed)
             self.seed_inventory[self.selected_seed] -= 1
+
 
     def import_assets(self):
         self.animations = {'up': [], 'down': [], 'left': [], 'right': [],
@@ -101,12 +102,14 @@ class Player(pygame.sprite.Sprite):
             full_path = '../graphics/character/' + animation
             self.animations[animation] = import_folder(full_path)
 
+
     def animate(self, dt):
         self.frame_index += 4 * dt
         if self.frame_index >= len(self.animations[self.status]):
             self.frame_index = 0
 
         self.image = self.animations[self.status][int(self.frame_index)]
+
 
     def input(self):
         keys = pygame.key.get_pressed()
@@ -176,9 +179,11 @@ class Player(pygame.sprite.Sprite):
         if self.timers['tool use'].active:
             self.status = self.status.split('_')[0] + '_' + self.selected_tool
 
+
     def update_timers(self):
         for timer in self.timers.values():
             timer.update()
+
 
     def collision(self, direction):
         for sprite in self.collision_sprites.sprites():
