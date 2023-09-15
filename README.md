@@ -6,10 +6,10 @@
 ![Langauge:Python](https://img.shields.io/badge/Language-Python-purple) ![platform:PyGame](https://img.shields.io/badge/Platform-PyGame-pink)
 > 2022.02.01 - 2022.02.15   
  
-> **Python 개인 프로젝트**
+> **Python 팀 프로젝트(유니티 개발자1, 게임 개발2)**
 * 미국의 농장 경영 게임인 'StarDew Valley'을 보고 간소화된 버전으로 만들어보자 하는 생각으로 제작하였습니다.
 * PyGame Package를 활용하여 제작하였습니다.
-* 농장 이미지, 게임 캐릭터, 수확물, 나무, 열매 등의 이미지는 유튜브 외부 링크 자료를 통해 가져왔습니다.
+* 농장 이미지, 게임 캐릭터, 수확물, 나무, 열매 등의 이미지는 unity 이미지를 게임 객체로 사용하였습니다.
 <br>
 
 > **게임 로직 설명**
